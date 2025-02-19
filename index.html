@@ -1,1 +1,51 @@
-nigger
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Fare Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="page2.html">Train Schedule</a></li>
+                <li><a href="page3.html">Contact Us</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="fare-guide">
+            <h1>Fare Guide</h1>
+            <label for="leaving">Leaving From:</label>
+            <select id="leaving">
+                <option value="north">North Ave.</option>
+                <option value="taft">Taft</option>
+            </select>
+            
+            <label for="going">Going To:</label>
+            <select id="going">
+                <option value="north">North Ave.</option>
+                <option value="taft">Taft</option>
+            </select>
+            
+            <div class="fare-display">
+                <h2>Ticket Price: <span id="ticket-price">--</span></h2>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Train Fare Guide</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
