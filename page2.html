@@ -1,47 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Train Schedule</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Train Schedule</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(135deg, #00ADEE, #007CB4);
+      padding: 15px 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo {
+      height: 60px;
+      margin-right: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      transition: all 0.3s;
+      border-radius: 5px;
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .search-bar input {
+      padding: 8px;
+      border: 2px solid #FFD600;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      background-color: #FFD600;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .search-bar button:hover {
+      background-color: #FFC107;
+    }
+    main {
+      padding: 30px;
+    }
+    .schedule-section h1 {
+      font-size: 2rem;
+      color: #007CB4;
+      margin-bottom: 20px;
+    }
+    .schedule-section p {
+      color: #555;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    .schedule-table {
+      width: 90%;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .schedule-table thead {
+      background: #007CB4;
+      color: #fff;
+    }
+    .schedule-table th,
+    .schedule-table td {
+      padding: 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    .schedule-table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .transit-map {
+      margin-top: 40px;
+    }
+    .transit-map h2 {
+      font-size: 1.8rem;
+      color: #007CB4;
+      margin-bottom: 15px;
+    }
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .map-container img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      border: 3px solid #007CB4;
+    }
+    footer {
+      background: linear-gradient(135deg, #00ADEE, #007CB4);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page2.html">Train Schedule</a></li>
-                <li><a href="page3.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="schedule">
-            <h1>Train Schedule</h1>
-            <table>
-                <tr>
-                    <th>Day</th>
-                    <th>Operating Hours (North Ave.)</th>
-                    <th>Operating Hours (Taft)</th>
-                </tr>
-                <tr>
-                    <td>Monday - Friday</td>
-                    <td>4:59 AM - 9:10 PM</td>
-                    <td>5:50 AM - 10:10 PM</td>
-                </tr>
-                <tr>
-                    <td>Saturday - Sunday</td>
-                    <td>4:59 AM - 9:10 PM</td>
-                    <td>5:51 AM - 10:01 PM</td>
-                </tr>
-            </table>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Train Fare Guide</p>
-    </footer>
+  <header>
+    <div class="header-container">
+      <img src="train.jpg" alt="Rail Transit Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="ind.html">Home</a></li>
+          <li><a href="page2.html">Train Schedule</a></li>
+          <li><a href="page3.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="schedule-section">
+      <h1>Train Schedule</h1>
+      <p>
+        The MRT-3 train schedule generally remains fairly consistent. Below is an overview of operating hours from Monday through Sunday. 
+        Actual times may vary due to maintenance or technical issues.
+      </p>
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>North Ave Hours</th>
+            <th>Taft Ave Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>4:59 AM – 9:10 PM</td>
+            <td>5:50 AM – 10:10 PM</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>4:59 AM – 9:10 PM</td>
+            <td>5:50 AM – 10:10 PM</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>4:59 AM – 9:10 PM</td>
+            <td>5:50 AM – 10:10 PM</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>4:59 AM – 9:10 PM</td>
+            <td>5:50 AM – 10:10 PM</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>4:59 AM – 9:10 PM</td>
+            <td>5:50 AM – 10:10 PM</td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td>4:59 AM – 9:10 PM</td>
+            <td>5:51 AM – 10:01 PM</td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td>4:59 AM – 9:10 PM</td>
+            <td>5:51 AM – 10:01 PM</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="transit-map">
+      <h2>Transit Map</h2>
+      <div class="map-container">
+        <img src="transit_map.png" alt="Transit Map">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Train Fare Guide | Designed for MRT3 (By M.Mendoza and M.Bernardo)</p>
+  </footer>
 </body>
 </html>
