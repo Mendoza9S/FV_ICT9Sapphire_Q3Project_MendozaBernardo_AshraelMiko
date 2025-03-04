@@ -1,43 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(135deg, #00ADEE, #007CB4);
+      padding: 15px 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo {
+      height: 60px;
+      margin-right: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      transition: all 0.3s;
+      border-radius: 5px;
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .search-bar input {
+      padding: 8px;
+      border: 2px solid #FFD600;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      background-color: #FFD600;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .search-bar button:hover {
+      background-color: #FFC107;
+    }
+    main {
+      padding: 30px;
+      min-height: 70vh;
+    }
+    .contact {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+    .contact h1 {
+      text-align: center;
+      color: #007CB4;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .contact p {
+      text-align: center;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-form label {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .contact-form textarea,
+    .contact-form input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .contact-form button {
+      width: 150px;
+      padding: 10px;
+      background-color: #007CB4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      align-self: flex-end;
+      transition: transform 0.2s;
+    }
+    .contact-form button:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: linear-gradient(135deg, #00ADEE, #007CB4);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="page2.html">Train Schedule</a></li>
-                <li><a href="page3.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="contact">
-            <h1>Contact Us</h1>
-            <form>
-                <label for="feedback">Feedback:</label>
-                <textarea id="feedback" placeholder="Type here..."></textarea>
-                
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                
-                <button type="submit">Submit Feedback</button>
-            </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Train Fare Guide</p>
-    </footer>
+  <header>
+    <div class="header-container">
+      <img src="train.jpg" alt="Rail Transit Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="ind.html">Home</a></li>
+          <li><a href="page2.html">Train Schedule</a></li>
+          <li><a href="page3.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="contact">
+      <h1>Contact Us</h1>
+      <p>We value your feedback. Please fill out the form below to share your comments or questions.</p>
+      <form class="contact-form" onsubmit="submitFeedback(event)">
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" placeholder="Type your message..." rows="5"></textarea>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <center><button type="submit">Submit Feedback</button></center>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Train Fare Guide | Designed for MRT3 (by M.Mendoza and M.Bernardo)</p>
+  </footer>
+  <script>
+    function submitFeedback(event) {
+      event.preventDefault();
+      alert('Thank you for your feedback :)');
+      location.reload();
+    }
+  </script>
 </body>
 </html>
-
