@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Train Fare Guide</title>
+  <style>
+    * {
+      margin: 0; 
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(135deg, #00ADEE, #007CB4);
+      padding: 15px 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo {
+      height: 60px;
+      margin-right: 20px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      transition: all 0.3s;
+      border-radius: 5px;
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .search-bar input {
+      padding: 8px;
+      border: 2px solid #FFD600;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-bar button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      background-color: #FFD600;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .search-bar button:hover {
+      background-color: #FFC107;
+    }
+
+    main {
+      padding: 30px;
+    }
+    .fare-guide h1 {
+      font-size: 2rem;
+      color: #007CB4;
+      margin-bottom: 15px;
+    }
+    .fare-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .fare-form {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .fare-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .fare-form select {
+      width: 220px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #bbb;
+    }
+    .fare-btn {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #007CB4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .fare-btn:hover {
+      transform: scale(1.05);
+    }
+    .fare-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #F5F5F5;
+      border-radius: 10px;
+      padding: 20px;
+      min-width: 240px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .fare-display h2 {
+      font-size: 2.2rem;
+      color: #333;
+    }
+
+    .transit-map {
+      margin-top: 40px;
+    }
+    .transit-map h2 {
+      font-size: 1.8rem;
+      color: #007CB4;
+      margin-bottom: 15px;
+    }
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .map-container img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      border: 3px solid #007CB4;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #00ADEE, #007CB4);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="train.jpg" alt="Rail Transit Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="ind.html">Home</a></li>
+          <li><a href="page2.html">Train Schedule</a></li>
+          <li><a href="page3.html">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="fare-guide">
+      <h1>Fare Guide</h1>
+      <div class="fare-container">
+        <div class="fare-form">
+          <label for="leaving">Leaving From:</label>
+          <select id="leaving">
+            <option value="North Ave">North Ave</option>
+            <option value="Quezon Ave">Quezon Ave</option>
+            <option value="GMA-Kamuning">GMA-Kamuning</option>
+            <option value="Araneta-Cubao">Araneta-Cubao</option>
+            <option value="Santolan">Santolan</option>
+            <option value="Ortigas">Ortigas</option>
+            <option value="Shaw Boulevard">Shaw Boulevard</option>
+            <option value="Boni">Boni</option>
+            <option value="Guadalupe">Guadalupe</option>
+            <option value="Buendia">Buendia</option>
+            <option value="Ayala">Ayala</option>
+            <option value="Magallanes">Magallanes</option>
+            <option value="Taft Ave">Taft Ave</option>
+          </select>
+          
+          <label for="going">Going To:</label>
+          <select id="going">
+            <option value="North Ave">North Ave</option>
+            <option value="Quezon Ave">Quezon Ave</option>
+            <option value="GMA-Kamuning">GMA-Kamuning</option>
+            <option value="Araneta-Cubao">Araneta-Cubao</option>
+            <option value="Santolan">Santolan</option>
+            <option value="Ortigas">Ortigas</option>
+            <option value="Shaw Boulevard">Shaw Boulevard</option>
+            <option value="Boni">Boni</option>
+            <option value="Guadalupe">Guadalupe</option>
+            <option value="Buendia">Buendia</option>
+            <option value="Ayala">Ayala</option>
+            <option value="Magallanes">Magallanes</option>
+            <option value="Taft Ave">Taft Ave</option>
+          </select>
+          <br><br>
+          <button class="fare-btn" onclick="calculateFare('regular')">Regular Fare</button>
+          <button class="fare-btn" onclick="calculateFare('discounted')">Discounted Fare</button>
+        </div>
+        <div class="fare-display">
+          <h2>Ticket Price: <span id="ticket-price">--</span></h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="transit-map">
+      <h2>Transit Map</h2>
+      <div class="map-container">
+        <img src="transit_map.png" alt="Transit Map">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Train Fare Guide | Designed for MRT3 (by M.Mendoza and M.Bernardo)</p>
+  </footer>
+
+  <script>
+    var stations = [
+      'North Ave',
+      'Quezon Ave',
+      'GMA-Kamuning',
+      'Araneta-Cubao',
+      'Santolan',
+      'Ortigas',
+      'Shaw Boulevard',
+      'Boni',
+      'Guadalupe',
+      'Buendia',
+      'Ayala',
+      'Magallanes',
+      'Taft Ave'
+    ];
+    function getRegularFare(distance) {
+      if (distance === 1) return 13;
+      if (distance === 2) return 16;
+      if (distance === 3) return 20;
+      if (distance === 4) return 24;
+      return 28;
+    }
+
+    function calculateFare(type) {
+      var leaving = document.getElementById('leaving').value;
+      var going = document.getElementById('going').value;
+      
+      // sir, i know that you mentioned we werent allowed to use if, else or if, return, but if i couldnt find a simpler way to do this, if i were to do the other method, which is manually, it would take too long and it would be extremly hard to manage the code and find any errors that might arise  
+      if (leaving === going) {
+        document.getElementById('ticket-price').innerText = '0.00';
+        return;
+      }
+
+      var startIndex = stations.indexOf(leaving);
+      var endIndex = stations.indexOf(going);
+
+      if (startIndex === -1 || endIndex === -1) {
+        document.getElementById('ticket-price').innerText = '--';
+        return;
+      }
+
+      var diff = Math.abs(endIndex - startIndex);
+
+      var regularFare = getRegularFare(diff);
+
+      var discountedFare = regularFare * 0.8;
+
+      if (type === 'regular') {
+        document.getElementById('ticket-price').innerText = regularFare.toFixed(2);
+      } else {
+        document.getElementById('ticket-price').innerText = discountedFare.toFixed(2);
+      }
+    }
+  </script>
+</body>
+</html>
